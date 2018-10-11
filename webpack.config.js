@@ -6,6 +6,7 @@ var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+const { CheckerPlugin } = require('awesome-typescript-loader')
 
 /**
  * Env
@@ -124,6 +125,9 @@ module.exports = function makeWebpackConfig() {
       // Allow loading html through js
       test: /\.html$/,
       loader: 'raw-loader'
+    }, {
+      test: /\.tsx?$/,
+      loader: 'awesome-typescript-loader'
     }]
   };
 
@@ -167,7 +171,8 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
-    })
+    }),
+    new CheckerPlugin()
   ];
 
   // Skip rendering index.html in test mode
@@ -219,6 +224,14 @@ module.exports = function makeWebpackConfig() {
     contentBase: './src/public',
     stats: 'minimal',
     host: '0.0.0.0'
+  };
+
+  /**
+   * Typescript
+   */
+  // Currently we need to add '.ts' to the resolve.extensions array.
+  config.resolve = {
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   };
 
   return config;
