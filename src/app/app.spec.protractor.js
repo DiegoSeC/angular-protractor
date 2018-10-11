@@ -14,6 +14,10 @@ describe('Protractor Examples', () => {
     el.getText().then((text) => {
       expect(text).toEqual('Hello from Angular !');
     });
+
+    const link = element(by.tagName('a'));
+
+    
     
   });
 });

@@ -7,7 +7,8 @@
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
     "test": "karma start",
     "test-watch": "karma start --auto-watch --no-single-run",
-    "start": "npm run server"
+    "start": "npm run server",
+    "protractor": "tsc && protractor conf.js"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,16 @@
   },
   "homepage": "https://github.com/preboot/angularjs-webpack",
   "dependencies": {
+    "@types/angular": "^1.6.51",
     "angular": "^1.7.0"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.8.9",
+    "@types/jasminewd2": "^2.0.5",
     "ajv": "^6.4.0",
     "angular-mocks": "^1.7.0",
     "autoprefixer": "^8.4.1",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.1.18",
@@ -47,9 +52,12 @@
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-loader": "^2.1.5",
+    "protractor": "^5.4.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^0.21.0",
+    "typescript": "^3.1.2",
     "webpack": "^2.7.0",
     "webpack-dev-server": "^2.11.2"
   }
