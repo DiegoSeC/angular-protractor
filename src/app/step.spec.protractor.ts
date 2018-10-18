@@ -73,8 +73,6 @@ fdescribe('A test with TypeScript: Copa Airlines Page Option: FLIGHTS - BOOK A F
       const lblFechasFlexible = element(by.css('#flightBooking_flexibleSearch_true + label'));
       expect(lblFechasFlexible.isPresent).toBeTruthy;
       expect(lblFechasFlexible.getAttribute('textContent')).toEqual('Fechas Flexibles');
-
-
     });
   
 
