@@ -1,4 +1,4 @@
-import {browser, element, by, ExpectedConditions, ElementFinder} from 'protractor';
+import {browser, element, by} from 'protractor';
 
 describe('A test with TypeScript', () => {
 
